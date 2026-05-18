@@ -8,9 +8,8 @@ import streamlit as st
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
-client = openai.OpenAI()
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 # Email configuration (use environment variables for safety)
 SMTP_SERVER = st.secrets["SMTP_SERVER"]
